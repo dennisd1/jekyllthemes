@@ -5,7 +5,8 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
-  <link href="/assets/css/jekyllthemes.css" rel="stylesheet" />
+  <!--<link href="/assets/css/jekyllthemes.css" rel="stylesheet" />-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
   <link href="/assets/css/syntax.css" rel="stylesheet" />
 <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
 
@@ -39,14 +40,8 @@
     </div>
   </header>
 
-<header id="video-background"><iframe class="video-background" src="//www.youtube.com/embed/ErHGUSsonPw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;loop=1&amp;modestbranding&amp;playlist=ErHGUSsonPw" frameborder="0" allowfullscreen=""></iframe>	<h2 class="editable" data-i18n="devices-hero-title" data-cms-source="/index.html" data-cms-index="0">Connect to Netflix using your favorite devices.</h2>	<p class="editable" data-i18n="devices-hero-subtitle" data-cms-source="/index.html" data-cms-index="1"></p></header>
-
-  <div id="pagecontainer" class="container">
-
-
-<div class="hero-unit">
-      <p><strong>Нужен свой блог <a href="http://jekyllrb.com/">Jekyll</a> blog?</strong> Whether you're looking for a fresh theme to drop in and go, or to use as a starting point for customization, you'll find the best ones available right here.</p>
- </div>
+<div id="topBar"> <button class="ui primary button" onclick="load_section()"> Click to open infosection </button> </div>
+<div id ="infosection" > </div>
 
 
 
@@ -63,7 +58,6 @@
     </div>
 
 
-  </div>
 
 
 
@@ -94,6 +88,12 @@
   </footer>
 
 
-
+<script>
+      function load_section(){
+            $.get("http://community.yoch.tv/raw/14", function(data){
+                $('#infosection').html(data);
+            });
+      }
+</script>
 </body>
 </html>
